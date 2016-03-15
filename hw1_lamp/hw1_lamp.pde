@@ -12,15 +12,18 @@ void setup() {
 }
 
 void draw() {
-  triangle(200, 300, 250, 200, 300, 300);
+  if (isLampOn) {
+    fill(lampsCurrentColor);
+  } else {
+    fill(BLACK);
+  }
+  triangle(200, 300, 250, 200, 300, 300); 
 }
 
 void mousePressed(){
   if (isLampOn) {
     isLampOn = false;
-    fill(BLACK);
   } else {
     isLampOn = true;
-    fill(lampsCurrentColor);
   }
 }
